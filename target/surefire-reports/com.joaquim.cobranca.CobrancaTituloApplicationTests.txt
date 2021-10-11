@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.joaquim.cobranca.CobrancaTituloApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.066 s - in com.joaquim.cobranca.CobrancaTituloApplicationTests

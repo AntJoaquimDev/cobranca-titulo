@@ -1,0 +1,6 @@
+com.joaquim.cobranca
+com.joaquim.cobranca.controller
+com.joaquim.cobranca.model
+com.joaquim.cobranca.repository
+com.joaquim.cobranca.repository.filter
+com.joaquim.cobranca.service

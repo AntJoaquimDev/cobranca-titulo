@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="LayoutPadrao">
+
+<head>
+	<title>Cadastro de título</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.standalone.min.css" />
+</head>
+
+<section layout:fragment="conteudo">
+
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<img alt="C&L-Software" src="/images/logo-cl30px.png" /> C&L-Software
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	<form class="form-horizontal" method="POST" action="/titulos" th:object=${titulo}>
+		<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
+			<span th:text="${mensagem}">MSG</span>
+		</div>
+		<!-- <div layout:include="Mensagem"></div>-->
+
+		<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+			<div th:each="detailedError : ${#fields.detailedErrors()}">
+			<span th:text="${detailedError.message}"></span>
+			</div>
+		</div>  
+		
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="clearfix">
+					<h1 class="panel-title cl-titulo-panel">Novo Títulos</h1>
+					<a class="btn btn-link cl-link-panel" href="/titulos">Listar Títulos</a>
+				</div>
+			</div>
+                <div class="form-group"  >
+					<div class="col-sm-1">
+						<input type="hidden" id="id" th:field="*{id}" />
+					</div>
+				</div>
+			<div class="panel-body">
+				<div class="form-group"  th:classappend="${#fields.hasErrors('descricao')} ?has-error">
+					<label for="descricao" class="col-sm-2 control-label">Descrição</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="descricao" th:field="*{descricao}" autofocus="autofocus" />
+					</div>
+				</div>
+				<div class="form-group"  th:classappend="${#fields.hasErrors('dataVencimento')} ?has-error">
+					<label for="dataVencimento" class="col-sm-2 control-label">Vencimento</label>
+					<div class="col-sm-2">
+						 <input type="date" class="form-control" id="dataVencimento" th:field="*{dataVencimento}" 
+						data-provide="datapick" data-date-format="dd/MM/yyyy" data-date-language="pt-BR"
+						data-date-autoclose="true" data-date-today-highlight="true" />
+					</div>
+				</div>
+				<div class="form-group" th:classappend="${#fields.hasErrors('valor')} ?has-error" >
+					<label for="valor" class="col-sm-2 control-label">Valor</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control js-currency" id="valor" th:field="*{valor}" />
+					</div>
+				</div>
+				<div class="form-group"  th:classappend="${#fields.hasErrors('status')} ?has-error">
+					<label for="status" class="col-sm-2 control-label">Status</label>
+					<div class="col-sm-2">
+						<select class="form-control" name="status"th:field="*{status}">
+
+							<option th:each=" status : ${todosStatusTitulo}" th:value="${status}"
+								th:text="${status.descricao}"></option>
+
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</section>
+<!--
+	<script src="/js/jquery-2.1.4.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/titulo.js"></script>
+	<script src="/js/bootstrap-datepicker.min.js"></script>
+	<script src="/js/bootstrap-datepicker.pt-BR.min.js"></script>
+		-->
+</html>

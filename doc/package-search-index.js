@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.joaquim.cobranca"},{"l":"com.joaquim.cobranca.controller"},{"l":"com.joaquim.cobranca.model"},{"l":"com.joaquim.cobranca.repository"},{"l":"com.joaquim.cobranca.repository.filter"},{"l":"com.joaquim.cobranca.service"}];updateSearchResults();

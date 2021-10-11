@@ -1,0 +1,8 @@
+com\joaquim\cobranca\repository\filter\TituloFilter.class
+com\joaquim\cobranca\repository\TitulosRepository.class
+com\joaquim\cobranca\model\StatusTitulo.class
+com\joaquim\cobranca\controller\cadastroController.class
+com\joaquim\cobranca\model\Titulo.class
+com\joaquim\cobranca\CobrancaTituloApplication$MvcConfig.class
+com\joaquim\cobranca\CobrancaTituloApplication.class
+com\joaquim\cobranca\service\ServiceCadastroTitulo.class

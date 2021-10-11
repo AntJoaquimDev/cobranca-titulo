@@ -1,0 +1,29 @@
+/*Tela garnde*/
+@media(min-width: 768px){
+	.panel-default{
+		
+		margin-left: 10px;
+		margin-right:10px	
+	}
+	.alert{
+	    margin-left: 10px;
+		margin-right: 10px;
+	}
+
+}
+
+
+.navbar-brand{
+	padding-top: 12px;
+	display: inline-flex;
+}
+
+.cl-link-panel{
+	float: right;
+	padding: 0px;
+}
+
+.cl-titulo-panel{
+	float: left;
+	padding: 2px;
+}
